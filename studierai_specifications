@@ -1,0 +1,77 @@
+Project Name: StudierAI
+
+1.	Technology Stack:
+	•	Next.js
+	•	OpenAI API
+	•	Firebase
+	•	Google Authentication
+	•	SCSS (for styling)
+2.	Color Scheme and Style:
+	•	The color scheme and style of the web app should follow the Duolingo app's design principles.
+3.	App Components and Functionality:
+	A. App Layout:
+		•	An always-showing left side menu.
+		•	A main content area that displays different screens based on the user's actions.
+	B. Left Side Menu:
+		•	Display the user's profile picture at the top.
+		•	Include large buttons to navigate between 4 screens:
+			1.	Upload Document
+			2.	Study for Exam
+			3.	Rehearse Oral Exam
+			4.	Info on the App
+		•	List of document titles below the user's profile photo.
+	C. Authentication:
+		•	Google Authentication should be used for user login.
+		•	The user's profile picture should be displayed in the left side menu upon successful login.
+	D. Upload Document Screen:
+		•	The landing page of the web app.
+		•	Large button for uploading PDF, TXT, or Word files.
+		•	Show a preview of the uploaded document.
+		•	Display a 'reading file' loading bar while the OpenAI API processes the document.
+		•	Extract the top information from the document using OpenAI API in a Question and Answering 		format (100-200 words answers) and save it as 'extractedQA'.
+		•	Once extraction is completed, display two buttons: 'Study the File' and 'Rehearse the Exam'.
+		•	Generate a title for the document and add it to the list in the left side menu.
+	E. Study for Exam Screen:
+		•	Display two options for the user:
+			1.	Generate Flashcards
+				•	Generate flashcards from the extractedQA file when the 'Generate Flashcards' button is 		clicked.
+				•	Display the flashcards in a 3 by 5 matrix that can be scrolled.
+				•	Show the question on the front of the flashcard, and flip to show the answer when clicked. 		Follow this tutorial for creating flip cards: https://bvgsoftware.com/blog/		how-to-build-a-flip-card-component-with-react/
+			2. Synthesize the document
+				•	Display an intuitively formatted synthesized document with the question and answers from the extractedQA file
+	F. Rehearse Oral Exam Screen:
+		•	Display a conversation view using the chat component provided in the following link: 		https://raw.githubusercontent.com/vittoriozoldan/codesample/main/chat_component.js
+		•	The chatbot asks questions from the extractedQA file.
+		•	The user can respond to the questions using text input or by recording their voice, which is 		then transcribed and displayed as a message response in the chat.
+		•	Compare the user's answer with the correct answer from the extractedQA file and provide 		feedback on missing details, incorrect information, and suggestions for improvement.
+4.	API Usage and Efficiency:
+	•	Use tokens efficiently when calling the OpenAI APIs.
+	•	Utilize the API keys provided in the .Env file of the AutoGPT project.
+5.	Code Structure and Conventions:
+	•	Follow React.js best practices and conventions.
+	•	Use functional components with hooks.
+	•	Organize components into a modular structure.
+	•	Utilize Redux for state management.
+6.	Use SCSS for styling and follow the BEM methodology. Accessibility and Responsiveness:
+	•	Implement accessibility best practices to make the web app usable by a wide range of users, including those with disabilities.
+	•	Follow the Web Content Accessibility Guidelines (WCAG) 2.1.
+	•	Ensure that the web app is responsive and works seamlessly on various devices, screen sizes, and browsers.
+7.	Performance Optimization:
+	•	Optimize the web app for fast loading and smooth user experience.
+	•	Use code splitting and lazy loading for components to reduce the initial bundle size.
+	•	Optimize images and other assets for faster loading.
+	•	Use React.memo, useCallback, and useMemo to prevent unnecessary re-renders and improve performance.
+8.	Security:
+		•	Implement security best practices to protect user data and prevent unauthorized access to the 		application.
+		•	Store API keys securely using environment variables.
+		•	Use secure HTTP headers and ensure proper CORS configuration.
+		•	Regularly update dependencies to address potential security vulnerabilities.
+9.	Testing and Deployment:
+	•	Write unit tests for components and utility functions using testing frameworks such as Jest 	and React Testing Library.
+	•	Implement end-to-end testing using a tool like Cypress to ensure smooth user flows and 	interactions.
+	•	Set up Continuous Integration and Continuous Deployment (CI/CD) using a platform like GitHub 	Actions or GitLab CI/CD.
+	•	Deploy the web app to a reliable hosting service like Netlify, Vercel, or AWS.
+10.	Documentation and Maintenance:
+	•	Provide clear and concise documentation for the web app, including component usage, configuration, and customization instructions.
+	•	Regularly review and update the codebase to address bugs, improve performance, and incorporate new features or updates.
+	•	Engage with the user community to gather feedback, address issues, and identify areas for improvement or expansion.
